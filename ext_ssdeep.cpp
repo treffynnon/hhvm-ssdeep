@@ -9,7 +9,7 @@
 
 namespace HPHP {
     static Variant HHVM_FUNCTION(ssdeep_fuzzy_hash, const String& to_hash) {
-        char* hash = (char*) malloc(FUZZY_MAX_RESULT);
+        char* hash = (char*) smart_malloc(FUZZY_MAX_RESULT);
         int to_hash_len = to_hash.length();
         const unsigned char* to_hash_char =
             reinterpret_cast<const unsigned char*>(to_hash.c_str());
@@ -31,7 +31,7 @@ namespace HPHP {
     }
 
     static Variant HHVM_FUNCTION(ssdeep_fuzzy_hash_filename, const String& file_name) {
-        char* hash = (char*) malloc(FUZZY_MAX_RESULT);
+        char* hash = (char*) smart_malloc(FUZZY_MAX_RESULT);
         if (0 != fuzzy_hash_filename(file_name.c_str(), hash)) {
             return false;
         } else {
