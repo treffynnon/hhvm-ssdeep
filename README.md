@@ -46,11 +46,15 @@ DynamicExtensions {
 Where `/path/to/hhvm/extensions` is a folder containing all HipHop extensions, and `sdeep.so` is in
 it. This will cause the extension to be loaded when the virtual machine starts up.
 
-## Differences from PECL
+## Documentation
+
+This extension is functionally equivalent to the PECL version I also maintain so the same documentation is applicable - see [php.net/ssdeep](http://php.net/ssdeep).
+
+### Differences from PECL
 
 There is one difference from the standard PECL implementation.
 
-* The info function is not included as HipHop VM does not implement phpinfo();
+* The info function is not included as HipHop VM does not implement phpinfo(); - //this does not affect the extensions public API//
 
 Otherwise, all functionality is (or should be) the same as the PECL implementation.
 
