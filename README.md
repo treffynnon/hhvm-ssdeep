@@ -39,7 +39,7 @@ To enable the extension, you need to have the following section in your hhvm con
 ~~~
 DynamicExtensionPath = /path/to/hhvm/extensions
 DynamicExtensions {
-	* = pgsql.so
+	* = ssdeep.so
 }
 ~~~
 
